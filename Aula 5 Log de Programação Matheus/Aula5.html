@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5</title>
+    
+</head>
+<!--Criar uma pagina com sistema ou controle de multa 
+    Controle de alfendega = BRASIL não e´estrangeiro -->
+<body> 
+    <script>
+var media = 0;
+//Uma variavel recebe uma media igual a 0
+onEvent("TextInput", "input", function( ) {
+  //É necessario criar um botão (input) para se inserir um valor
+  media = getText("TextInput");
+  //A média aceita o valor digitado do botão (input)
+  if (media >= 7) {
+    //Dependendo do valor se a a media digitada for maior ou igual a 7 havera uma progressão
+    setText("labe13", "Voce está aprovado");
+    //Com essa progressão sera criado um texto (labe) com a mensagem de aprovação
+  }
+  // 
+});
+// 
+
+    </script>
+</body>
+</html>
