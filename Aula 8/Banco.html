@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <b><h1>Banking Proz System</h1>><b>
+
+            <Section>
+                
+
+                <input type="text" name="nome" id="nome" placeholder="Digite seu Cpf"><br>
+                <label for="nacionalidade">Selecione seu tipo de serviço:</label><br>
+                <select id="CPF">
+
+                    <option value="Ch">Cheking</option>
+                    <option value="Sa">Saving</option>
+                    <option value="Cre">Credit</option>
+                   
+                <script>
+
+                        <button onclick="processAccountType()">Submit</button>  
+                    function calcular() {
+                        var nome = document.querySelector('input#nome').value;
+                        var nacionalidade = document.querySelector('select#CPF').value;
+                        var resp = document.querySelector('div#resp');
+
+                        resp.innerHTML = `<p >Selecione o tipo de serviço , ${nome}!`;
+
+                        if (nacionalidade === "") {
+                            resp.innerHTML += ` !</p>`;
+                        } else if (nacionalidade === "ar"  ) {
+                            resp.innerHTML += ` !</p>`;
+                        } else if (nacionalidade === "co") {
+                            resp.innerHTML += ` !</p>`;
+                        } else if (nacionalidade === "ven") {
+                            resp.innerHTML += ` </p>`;
+            
+                            resp.innerHTML += `</p>`;
+                        }
+                    }
+
+                </script>
+            </Section>
+    </main>
+</body>
+</html>
