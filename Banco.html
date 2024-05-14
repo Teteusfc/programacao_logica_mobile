@@ -27,12 +27,15 @@
           <label>Selecione o tipo de Serviço:</label>
         
           <select id="transactionType">
-            <option value="deposit">Depósito</option>
-            <option value="withdraw">Saque de Conta</option>
-            <option value="checkBalance">Saldo </option>
+            <!--<--uma classe que pertence ao obejto que esta sendo contruido pelo CamelCase-->
+            <option value="PorNaConta">Depósito</option>  <!-- "deposit "-->
+            <option value="FazerUmSaque">Sacar da Conta</option> <!--withdraw-->
+            <option value="SaldoSobrando">Saldo remanescente</option>  <!--checkbalance-->
+            <!-- Todos os novos "values" vão receber um novo valor -->
           </select>
         
-          <button onclick="processTransaction()">Escolhido</button>
+          <button onclick="processTransaction()">Iniciar</button>
+          <!--Botão de processamento -->
         
           <script>
             var balance = 0;
@@ -40,8 +43,10 @@
             function processTransaction() {
               var type = document.getElementById("transactionType").value;
               var amount = 0;
+              // qulquer informação que esta na função trasnsiontype vai ser executado
         
-              if (type === "deposit" || type === "withdraw") {
+              if (type === "PorNaConta" || type === "FazerUmSaque") {
+                // a variavel  if
                 amount = parseFloat(prompt("Insira o valor da transação:"));
                 if (isNaN(amount)) {
                   alert("Por favor, insira um valor numérico válido.");
