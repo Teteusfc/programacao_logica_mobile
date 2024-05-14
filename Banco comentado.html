@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco comentado</title>
+</head>
+<body>
+    var balance = 0; // Inicializa o saldo como 0.
+
+function processTransaction() { // Função para processar a transação.
+  var type = document.getElementById("transactionType").value; // Obtém o tipo de transação do elemento com o id "transactionType" no documento HTML.
+  var amount = 0; // Inicializa o valor da transação como 0.
+
+  if (type === "deposit" || type === "withdraw") { // Verifica se o tipo de transação é "deposit" ou "withdraw".
+    amount = parseFloat(prompt("Insira o valor da transação:")); // Solicita ao usuário que insira o valor da transação e o converte para um número de ponto flutuante.
+
+    if (isNaN(amount)) { // Verifica se o valor digitado não é um número.
+      alert("Por favor, insira um valor numérico válido."); // Exibe um alerta se o valor não for um número válido.
+      return; // Retorna, interrompendo a execução da função.
+    }
+
+    // Função para depositar dinheiro na conta.
+    function deposit() {
+      var amount = prompt("Faça um Depósito na sua Conta:"); // Solicita ao usuário que insira o valor a ser depositado.
+      balance += parseFloat(amount); // Adiciona o valor depositado ao saldo atual.
+      updateBalance(); // Atualiza o saldo exibido na página.
+    }
+
+    // Função para retirar dinheiro da conta.
+    function withdraw() {
+      var amount = prompt("Quanto quer retirar da sua Conta:"); // Solicita ao usuário que insira o valor a ser retirado.
+      balance -= parseFloat(amount); // Subtrai o valor retirado do saldo atual.
+      updateBalance(); // Atualiza o saldo exibido na página.
+    }
+
+    // Função para verificar o saldo atual da conta.
+    function checkBalance() {
+      alert("Seu saldo atual é: $" + balance.toFixed(2)); // Exibe um alerta com o saldo atual formatado para duas casas decimais.
+    }
+
+    // Função para atualizar o saldo na página HTML.
+    function updateBalance() {
+      document.getElementById("balance").innerHTML = "$" + balance.toFixed(2); // Atualiza o elemento com o id "balance" na página HTML com o saldo atual formatado para duas casas decimais.
+    }
+  }
+
+  switch (type) { // Executa uma instrução switch com base no tipo de transação.
+    case "deposit":
+      deposit(amount); // Chama a função deposit() se o tipo de transação for "deposit".
+      break;
+    case "withdraw":
+      withdraw(amount); // Chama a função withdraw() se o tipo de transação for "withdraw".
+      break;
+    case "checkBalance":
+      checkBalance(); // Chama a função checkBalance() se o tipo de transação for "checkBalance".
+      break;
+    default:
+      alert("Desculpe isso está fora do sistema "); // Exibe um alerta se o tipo de transação não for reconhecido.
+  }
+}
+
+
+
+</body>
+</html>
