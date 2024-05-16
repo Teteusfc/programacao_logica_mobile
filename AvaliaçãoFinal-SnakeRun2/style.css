@@ -1,0 +1,22 @@
+@charset "UTF-08";
+
+body {
+    font-family: "Helvetica Neue", Helvetica , sans-serif;
+    background-color: rgb(107, 129, 225);
+    align-items: center;
+    justify-content: center;
+    /*display: flex;*/
+    background-image: url(atariFundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+ h1{
+    font-size: 2.5em;
+
+}
+
+canvas{
+    border: 10px solid rgb(10, 114, 175);
+    background-color: rgb(0, 0, 0);
+    align-self: auto;
+}}
